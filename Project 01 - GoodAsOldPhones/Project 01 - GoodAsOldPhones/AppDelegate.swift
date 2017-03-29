@@ -15,7 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let productVC = YCProductsViewController();
+        let navi_1 = UINavigationController(rootViewController: productVC);
+        navi_1.tabBarItem.title = "Products";
+        
+        let normalVC = UIViewController();
+        normalVC.view.backgroundColor = UIColor.red;
+        let navi_2 = UINavigationController(rootViewController: normalVC);
+        navi_2.tabBarItem.title = "Normal";
+        
+        var viewcontrollers = Array<UINavigationController>();
+        viewcontrollers.append(navi_1);
+        viewcontrollers.append(navi_2);
+        
+        let tabbarVC = UITabBarController();
+        tabbarVC.viewControllers = viewcontrollers;
+        window = UIWindow(frame: UIScreen.main.bounds);
+        window!.rootViewController = tabbarVC;
+        window?.makeKeyAndVisible();
         return true
     }
 
