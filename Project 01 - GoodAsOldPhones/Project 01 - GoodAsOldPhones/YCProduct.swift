@@ -13,7 +13,7 @@ class YCProduct {
     var cellImageName: String?
     var fullScreenImageName: String?
     
-    init(_ name: String, cellImageName: String, fullScreenImageName: String) {
+    init(name: String, cellImageName: String, fullScreenImageName: String) {
         self.name = name;
         self.cellImageName = cellImageName;
         self.fullScreenImageName = fullScreenImageName;

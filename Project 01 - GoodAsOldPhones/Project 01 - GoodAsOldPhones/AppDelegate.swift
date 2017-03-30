@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let productVC = YCProductsViewController();
+        let productVC = YCProductsTableViewController();
         let navi_1 = UINavigationController(rootViewController: productVC);
         navi_1.tabBarItem.title = "Products";
         
