@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navi_1 = UINavigationController(rootViewController: productVC);
         navi_1.tabBarItem.title = "Products";
         
-        let normalVC = UIViewController();
-        normalVC.view.backgroundColor = UIColor.red;
+        let normalVC = YCContactViewController();
         let navi_2 = UINavigationController(rootViewController: normalVC);
         navi_2.tabBarItem.title = "Normal";
         

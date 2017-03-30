@@ -43,6 +43,7 @@ class YCProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         productImageView.frame = view.bounds;
         view.addSubview(productImageView);
         
@@ -53,7 +54,11 @@ class YCProductViewController: UIViewController {
         let btnW: CGFloat = 160;
         addCarBtn.frame = CGRect(x: (viewW - btnW) * 0.5, y: productNameLabel.frame.maxY + 50, width: btnW, height: 41)
         view.addSubview(addCarBtn);
-        
+        self.hidesBottomBarWhenPushed = true;
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
     }
 
     override func didReceiveMemoryWarning() {
