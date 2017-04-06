@@ -6,32 +6,46 @@
 //  Copyright © 2017年 com.Durand. All rights reserved.
 //
 
+
+
 import UIKit
 
 class YCContactViewController: UIViewController {
     
-    override func loadView() {
-        view = UIScrollView(frame: UIScreen.main.bounds);
-//        (view as! UIScrollView).contentSize = view.bounds.size;
-    }
+    
+    var scrollView: UIScrollView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let label = UILabel(frame: CGRect(x: 0, y: 100, width: 414, height: 60));
-        label.text = "test";
-        label.font = UIFont.systemFont(ofSize: 30);
-        label.textAlignment = .center;
-        label.textColor = UIColor.gray;
-        
-        view.addSubview(label);
-        
-        // Do any additional setup after loading the view.
+        scrollView = Bundle.main.loadNibNamed("YCContactView", owner: nil, options: nil)?.first as? UIScrollView;
+        if scrollView != nil {
+            scrollView!.contentSize = CGSize(width: 414, height: 800);
+            view.addSubview(scrollView!);
+        }
+//        scrollView?.isUserInteractionEnabled = false;
+        view.backgroundColor = UIColor.white;
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated);
+//        scrollView?.contentSize = CGSize(width: 414, height: 800);
+//    }
+    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        print("frame: " + "\(scrollView!.frame)\n" + "contentSize: " + "\(scrollView!.contentSize)\n");
+//        
+//    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews();
+        scrollView?.frame = view.bounds;
+        //        print("frame: " + "\(scrollView!.frame)");
+        scrollView?.contentSize = CGSize(width: 414, height: 800);
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews();
+        
     }
 
 }

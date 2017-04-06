@@ -54,7 +54,7 @@ class YCProductViewController: UIViewController {
         let btnW: CGFloat = 160;
         addCarBtn.frame = CGRect(x: (viewW - btnW) * 0.5, y: productNameLabel.frame.maxY + 50, width: btnW, height: 41)
         view.addSubview(addCarBtn);
-        self.hidesBottomBarWhenPushed = true;
+//        self.hidesBottomBarWhenPushed = true;
     }
     
     override func viewWillAppear(_ animated: Bool) {

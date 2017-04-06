@@ -36,6 +36,7 @@ class YCProductsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = YCProductViewController();
         vc.product = products?[indexPath.row];
+        vc.hidesBottomBarWhenPushed = true;
         
         navigationController?.pushViewController(vc, animated: true);
         tableView .deselectRow(at: indexPath, animated: true);
