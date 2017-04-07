@@ -12,17 +12,11 @@ import UIKit
 
 class YCContactViewController: UIViewController {
     
-    
-    var scrollView: UIScrollView?
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView = Bundle.main.loadNibNamed("YCContactView", owner: nil, options: nil)?.first as? UIScrollView;
-        if scrollView != nil {
-            scrollView!.contentSize = CGSize(width: 414, height: 800);
-            view.addSubview(scrollView!);
-        }
-//        scrollView?.isUserInteractionEnabled = false;
+//        view.addSubview(scrollView);
         view.backgroundColor = UIColor.white;
     }
     
@@ -38,14 +32,13 @@ class YCContactViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews();
-        scrollView?.frame = view.bounds;
-        //        print("frame: " + "\(scrollView!.frame)");
-        scrollView?.contentSize = CGSize(width: 414, height: 800);
+        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews();
-        
+//        scrollView?.frame = view.bounds;
+        scrollView?.contentSize = CGSize(width: 0, height: 800);
     }
 
 }
