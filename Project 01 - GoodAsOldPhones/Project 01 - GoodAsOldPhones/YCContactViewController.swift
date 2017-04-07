@@ -38,7 +38,7 @@ class YCContactViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews();
 //        scrollView?.frame = view.bounds;
-        scrollView?.contentSize = CGSize(width: 0, height: 800);
+        scrollView.contentSize = CGSize(width: 0, height: 800);
     }
 
 }

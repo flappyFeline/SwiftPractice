@@ -11,11 +11,11 @@
 		131BAEBB1E8AAFC800912967 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131BAEBA1E8AAFC800912967 /* ViewController.swift */; };
 		131BAEC01E8AAFC800912967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 131BAEBF1E8AAFC800912967 /* Assets.xcassets */; };
 		131BAEC31E8AAFC800912967 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131BAEC11E8AAFC800912967 /* LaunchScreen.storyboard */; };
-		132468C31E967C9A008B2E57 /* YCContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132468C21E967C9A008B2E57 /* YCContactView.xib */; };
 		1362D5671E8BEDDF00449E18 /* YCProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1362D5661E8BEDDF00449E18 /* YCProductsTableViewController.swift */; };
 		1362D5691E8BFCD200449E18 /* YCProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1362D5681E8BFCD200449E18 /* YCProduct.swift */; };
 		136A3ADF1E8D464A002C76C0 /* YCContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A3ADE1E8D464A002C76C0 /* YCContactViewController.swift */; };
 		136A3AE11E8D46D0002C76C0 /* YCProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A3AE01E8D46D0002C76C0 /* YCProductViewController.swift */; };
+		13A1C5551E97D44D00D21C39 /* YCContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A1C5541E97D44D00D21C39 /* YCContactView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,11 +25,11 @@
 		131BAEBF1E8AAFC800912967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		131BAEC21E8AAFC800912967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		131BAEC41E8AAFC800912967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		132468C21E967C9A008B2E57 /* YCContactView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YCContactView.xib; path = ../../YCContactView.xib; sourceTree = "<group>"; };
 		1362D5661E8BEDDF00449E18 /* YCProductsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCProductsTableViewController.swift; sourceTree = "<group>"; };
 		1362D5681E8BFCD200449E18 /* YCProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCProduct.swift; sourceTree = "<group>"; };
 		136A3ADE1E8D464A002C76C0 /* YCContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCContactViewController.swift; sourceTree = "<group>"; };
 		136A3AE01E8D46D0002C76C0 /* YCProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCProductViewController.swift; sourceTree = "<group>"; };
+		13A1C5541E97D44D00D21C39 /* YCContactView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YCContactView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +62,13 @@
 		131BAEB71E8AAFC800912967 /* Project 01 - GoodAsOldPhones */ = {
 			isa = PBXGroup;
 			children = (
+				13A1C5541E97D44D00D21C39 /* YCContactView.xib */,
 				131BAEB81E8AAFC800912967 /* AppDelegate.swift */,
 				1362D5661E8BEDDF00449E18 /* YCProductsTableViewController.swift */,
 				136A3ADE1E8D464A002C76C0 /* YCContactViewController.swift */,
 				136A3AE01E8D46D0002C76C0 /* YCProductViewController.swift */,
 				1362D5681E8BFCD200449E18 /* YCProduct.swift */,
 				131BAEBA1E8AAFC800912967 /* ViewController.swift */,
-				132468C21E967C9A008B2E57 /* YCContactView.xib */,
 				131BAEBF1E8AAFC800912967 /* Assets.xcassets */,
 				131BAEC11E8AAFC800912967 /* LaunchScreen.storyboard */,
 				131BAEC41E8AAFC800912967 /* Info.plist */,
@@ -138,7 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				131BAEC31E8AAFC800912967 /* LaunchScreen.storyboard in Resources */,
-				132468C31E967C9A008B2E57 /* YCContactView.xib in Resources */,
+				13A1C5551E97D44D00D21C39 /* YCContactView.xib in Resources */,
 				131BAEC01E8AAFC800912967 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
