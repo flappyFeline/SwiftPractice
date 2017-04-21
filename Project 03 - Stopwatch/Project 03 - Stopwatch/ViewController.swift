@@ -12,13 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let test: YCTestClass = YCTestClass();
+        test.test;
     }
 
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        
+
     }
 
-
 }
-
