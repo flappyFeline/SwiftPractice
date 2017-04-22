@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Master View Controller-->
         <scene sceneID="uBh-Ps-F8u">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="Syj-AC-3i1" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="Syj-AC-3i1" customClass="MasterViewController" customModule="Project_06___CandySearch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eiQ-l7-Abf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +64,7 @@
         <scene sceneID="lkq-cv-aFd">
             <objects>
                 <navigationController id="9nU-AY-FtA" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yxh-dw-zyf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yxh-dw-zyf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.20392156859999999" green="0.7843137255" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -93,7 +93,7 @@
         <!--Detail-->
         <scene sceneID="tji-DS-a8i">
             <objects>
-                <viewController title="Detail" id="2iN-VY-Al6" customClass="DetailViewController" customModule="CandySearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="2iN-VY-Al6" customClass="DetailViewController" customModule="Project_06___CandySearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P54-4k-Mb0"/>
                         <viewControllerLayoutGuide type="bottom" id="qG5-ya-aoL"/>
@@ -103,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sl8-2d-Jwy">
-                                <rect key="frame" x="20" y="74" width="343" height="637"/>
+                                <rect key="frame" x="20" y="74" width="343" height="593"/>
                                 <subviews>
                                     <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="b3a-AC-2HW">
                                         <rect key="frame" x="72" y="0.0" width="200" height="34"/>
@@ -117,7 +117,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="j8X-X3-KT4">
-                                        <rect key="frame" x="0.0" y="34" width="343" height="603"/>
+                                        <rect key="frame" x="0.0" y="34" width="343" height="559"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -148,7 +148,7 @@
         <scene sceneID="IhT-id-DSj">
             <objects>
                 <navigationController id="NXL-FQ-6mg" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="LcX-ow-rUO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LcX-ow-rUO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.20392156859999999" green="0.7843137255" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -25,6 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = UIColor.candyGreen();
         return true
     }
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        guard let secondaryAsNavViewController = secondaryViewController as? UINavigationController else { return false }
+        guard let topAsDetailViewController = secondaryAsNavViewController.topViewController as? UITableViewController else { return false }
+        return true;
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
