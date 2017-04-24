@@ -28,8 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         guard let secondaryAsNavViewController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsDetailViewController = secondaryAsNavViewController.topViewController as? UITableViewController else { return false }
-        return true;
+        guard let topAsDetailViewController = secondaryAsNavViewController.topViewController as? DetailViewController else { return false }
+        if topAsDetailViewController.detailCandy == nil {
+            return true;
+        }
+        return false;
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

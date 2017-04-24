@@ -64,6 +64,25 @@ class MasterViewController: UITableViewController {
         
         tableView.reloadData();
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let candy: Candy;
+                if searchController.isActive {
+                    candy = filteredCandies[(indexPath as NSIndexPath).row];
+                } else {
+                    candy = candies[(indexPath as NSIndexPath).row];
+                }
+                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController;
+                controller.detailCandy = candy;
+                // 下面俩个属性必须同时作用 才会既有普通的返回按钮效果 同时 旋转时也会显示 splitViewController的leftBarButtonItem的样式
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem;
+                controller.navigationItem.leftItemsSupplementBackButton = true;
+            }
+        }
+    }
 }
 
 extension MasterViewController {
@@ -77,19 +96,17 @@ extension MasterViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reuseID = "Cell";
-        var cell = tableView.dequeueReusableCell(withIdentifier: reuseID);
-        if (cell == nil) {
-            cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: reuseID);
-        }
+        let
+        cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath);
         var candy: Candy;
         if searchController.isActive {
             candy = filteredCandies[indexPath.row];
         } else {
             candy = candies[indexPath.row];
         }
-        cell?.textLabel?.text = candy.name;
-        cell?.detailTextLabel?.text = candy.category;
-        return cell!;
+        cell.textLabel?.text = candy.name;
+        cell.detailTextLabel?.text = candy.category;
+        return cell;
     }
 
 }

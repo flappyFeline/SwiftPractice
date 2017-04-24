@@ -24,15 +24,31 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="JHA-Ua-BVH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="vSs-gi-Gif" detailTextLabel="Itm-PK-1n1" style="IBUITableViewCellStyleSubtitle" id="JHA-Ua-BVH">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JHA-Ua-BVH" id="KqS-mW-icW">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vSs-gi-Gif">
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Itm-PK-1n1">
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="NXL-FQ-6mg" kind="show" identifier="showDetail" id="gza-6x-vsY"/>
+                                    <segue destination="NXL-FQ-6mg" kind="showDetail" identifier="showDetail" action="showViewController:sender:" id="1R5-rm-ZRK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -142,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLw-bx-vyN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1226" y="529"/>
+            <point key="canvasLocation" x="1047" y="599"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IhT-id-DSj">
@@ -154,18 +170,18 @@
                         <color key="barTintColor" red="0.20392156859999999" green="0.7843137255" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="2iN-VY-Al6" kind="show" id="mvu-lc-Bhl"/>
+                        <segue destination="2iN-VY-Al6" kind="relationship" relationship="rootViewController" id="4B4-Tc-bGT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBO-Ua-4nt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="254" y="530"/>
+            <point key="canvasLocation" x="182" y="582"/>
         </scene>
     </scenes>
     <resources>
         <image name="Inline-Logo" width="300" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gza-6x-vsY"/>
+        <segue reference="1R5-rm-ZRK"/>
     </inferredMetricsTieBreakers>
 </document>
