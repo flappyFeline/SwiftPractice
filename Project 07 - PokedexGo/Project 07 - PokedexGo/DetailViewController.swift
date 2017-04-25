@@ -12,6 +12,11 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
+    var pokemon: Pokemon! {
+        didSet (newPokemon) {
+            //self.refreshUI()
+        }
+    }
 
     func configureView() {
         // Update the user interface for the detail item.
@@ -41,5 +46,11 @@ class DetailViewController: UIViewController {
     }
 
 
+}
+
+extension DetailViewController: PokemonSelectionDelegate {
+    func pokemonSelected(_ newPokemon: Pokemon) {
+        pokemon = newPokemon
+    }
 }
 

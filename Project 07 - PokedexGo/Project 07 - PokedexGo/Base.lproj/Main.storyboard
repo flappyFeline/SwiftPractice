@@ -150,6 +150,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Q9v-s4-lhf" id="f30-2g-y5i"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
