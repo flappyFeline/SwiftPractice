@@ -10,39 +10,31 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
+    @IBOutlet weak var nameIDLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var iconImageVIew: UIImageView!
     var pokemon: Pokemon! {
         didSet (newPokemon) {
-            //self.refreshUI()
+            self.refreshUI()
         }
     }
 
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
+    func refreshUI() {
+        if pokemon == nil {
+            return;
         }
+        let idString = NSString(format: " #%03d", pokemon.id) as String;
+        nameIDLabel?.text = pokemon.name + idString;
+        iconImageVIew?.image = LibraryAPI.shareInstance.downloadImg(pokemon.pokeImgUrl);
+        detailLabel?.text = pokemon.detailInfo;
+        
+        self.title = pokemon.name;
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    var detailItem: Pokemon? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
+        refreshUI();
     }
 
 

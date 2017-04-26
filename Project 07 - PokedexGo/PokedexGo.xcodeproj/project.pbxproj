@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		132464B91EB02F1E0094CA5D /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132464B81EB02F1E0094CA5D /* PersistencyManager.swift */; };
+		132464BB1EB02F600094CA5D /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132464BA1EB02F600094CA5D /* LibraryAPI.swift */; };
 		1396255A1EAE3763001EEC17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139625591EAE3763001EEC17 /* AppDelegate.swift */; };
 		1396255C1EAE3763001EEC17 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1396255B1EAE3763001EEC17 /* MasterViewController.swift */; };
 		1396255E1EAE3763001EEC17 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1396255D1EAE3763001EEC17 /* DetailViewController.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		06B6C16B0F46FE641683CABA /* Pods-PokedexGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokedexGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokedexGo/Pods-PokedexGo.release.xcconfig"; sourceTree = "<group>"; };
+		132464B81EB02F1E0094CA5D /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
+		132464BA1EB02F600094CA5D /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
 		139625561EAE3763001EEC17 /* PokedexGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokedexGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139625591EAE3763001EEC17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1396255B1EAE3763001EEC17 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		132464B71EB02F090094CA5D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				132464B81EB02F1E0094CA5D /* PersistencyManager.swift */,
+				132464BA1EB02F600094CA5D /* LibraryAPI.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		1396254D1EAE3763001EEC17 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				139625591EAE3763001EEC17 /* AppDelegate.swift */,
+				132464B71EB02F090094CA5D /* API */,
 				1396256D1EAE3FBA001EEC17 /* Controller */,
 				1396256E1EAE3FE5001EEC17 /* Model */,
 				13DF30E31EAE41D4001C3DB7 /* View */,
@@ -264,8 +278,10 @@
 				139625701EAE4017001EEC17 /* Pokemon.swift in Sources */,
 				1396255C1EAE3763001EEC17 /* MasterViewController.swift in Sources */,
 				13DF30E71EAEDB27001C3DB7 /* Constants.swift in Sources */,
+				132464BB1EB02F600094CA5D /* LibraryAPI.swift in Sources */,
 				1396255A1EAE3763001EEC17 /* AppDelegate.swift in Sources */,
 				13DF30E21EAE4187001C3DB7 /* PokemonConstants.swift in Sources */,
+				132464B91EB02F1E0094CA5D /* PersistencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

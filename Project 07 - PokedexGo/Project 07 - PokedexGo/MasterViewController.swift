@@ -10,14 +10,6 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class LibraryAPI: NSObject {
-    static let shareInstance = LibraryAPI();
-    
-    func getPokemons() -> [Pokemon] {
-        return pokemons;
-    }
-}
-
 protocol PokemonSelectionDelegate: class {
     func pokemonSelected(_ newPokemon: Pokemon);
 }
