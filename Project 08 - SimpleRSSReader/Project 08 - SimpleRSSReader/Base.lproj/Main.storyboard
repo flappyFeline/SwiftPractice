@@ -12,7 +12,7 @@
         <!--Root View Controller-->
         <scene sceneID="8Zd-Ae-SM9">
             <objects>
-                <tableViewController id="V2k-KX-zKn" customClass="ViewController" customModule="Project_08___SimpleRSSReader" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="V2k-KX-zKn" customClass="NewsTableViewController" customModule="Project_08___SimpleRSSReader" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AoR-cB-vBx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
