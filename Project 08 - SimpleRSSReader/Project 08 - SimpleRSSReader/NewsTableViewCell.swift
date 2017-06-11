@@ -8,11 +8,22 @@
 
 import UIKit
 
+
+
+enum CellState: Int {
+    case expanded = 0;
+    case collapsed;
+}
+
 class NewsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var newsTitle: UILabel!
     @IBOutlet weak var pubDate: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel! {
+        didSet {
+            descriptionLabel.numberOfLines = 4;
+        }
+    }
     
     var data: item? {
         willSet {

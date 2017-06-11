@@ -13,10 +13,10 @@ class NewsTableViewController: UITableViewController {
 
     
     fileprivate let feedParser = FeedParser();
-    fileprivate let feedURL = "http://www.apple.com/main/rss/hotnews/hotnews.rss"
+    fileprivate let feedURL = "http://www.apple.com/main/rss/hotnews/hotnews.rss";
     
-    fileprivate var rssItems: [item]?
-    
+    fileprivate var rssItems: [item]?;
+    fileprivate var cellStates: [CellState]?;
     
     
     override func viewDidLoad() {
@@ -29,9 +29,10 @@ class NewsTableViewController: UITableViewController {
         
         feedParser.parseFeed(feedURL: feedURL) { [weak self] (rssItems) in
             self?.rssItems = rssItems;
+            self?.cellStates = Array(repeating: .collapsed, count: rssItems.count);
             
             DispatchQueue.main.async {
-                self?.tableView.reloadSections(IndexSet.init(integer: 0), with: .none);
+                self?.tableView.reloadSections(IndexSet(integer: 0), with: .none);
             }
         }
         
@@ -53,11 +54,32 @@ class NewsTableViewController: UITableViewController {
         
         if let item = rssItems?[indexPath.row] {
             cell.data = item;
+            
+            if let cellState = cellStates?[indexPath.row] {
+                cell.descriptionLabel.numberOfLines = cellState == .expanded ? 0 : 4;
+            }
         }
+        
         
         return cell;
         
     }
-
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! NewsTableViewCell;
+        
+        let cellState_ = cellStates?[indexPath.row];
+        guard var cellState = cellState_ else { return; }
+        tableView.beginUpdates();
+        switch cellState {
+        case .collapsed :
+            cell.descriptionLabel.numberOfLines = 0;
+            cellState = .expanded;
+        case .expanded :
+            cell.descriptionLabel.numberOfLines = 4;
+            cellState = .collapsed;
+        }
+        cellStates?[indexPath.row] = cellState;
+        tableView.endUpdates();
+    }
 }
