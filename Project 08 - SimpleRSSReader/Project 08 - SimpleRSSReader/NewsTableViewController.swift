@@ -12,6 +12,9 @@ import UIKit
 class NewsTableViewController: UITableViewController {
 
     
+    fileprivate let feedParser = FeedParser();
+    fileprivate let feedURL = "http://www.apple.com/main/rss/hotnews/hotnews.rss"
+    
     fileprivate var rssItems: [item]?
     
     
@@ -19,6 +22,18 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.estimatedRowHeight = 140;
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine;
+        
+        feedParser.parseFeed(feedURL: feedURL) { [weak self] (rssItems) in
+            self?.rssItems = rssItems;
+            
+            DispatchQueue.main.async {
+                self?.tableView.reloadSections(IndexSet.init(integer: 0), with: .none);
+            }
+        }
         
     }
 
