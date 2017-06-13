@@ -14,16 +14,45 @@ class FirstTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        UIApplication.shared.isStatusBarHidden = true;
-        
         view.backgroundColor = .black;
         tableView.separatorStyle = .none;
         tableView.tableFooterView = UIView.init(frame: .zero);
         tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: "FirstCell");
         tableView.rowHeight = 60;
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true;
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        animateTable();
+    }
+    
+    func animateTable() {
+        
+        tableView.reloadData();
+        
+        let cells = tableView.visibleCells;
+        let tableHeight = tableView.bounds.size.height
+        for cell in cells {
+            cell.transform = CGAffineTransform.init(translationX: 0, y: tableHeight);
+        }
+        
+        var index = 0;
+        for cell in cells {
+            
+            UIView.animate(withDuration: 1.5, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: { 
+                cell.transform = .identity;
+//                print("cell was run animation \(String(describing: cell.textLabel?.text))");
+            }, completion: nil);
+            
+            index += 1;
+        }
+    }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
