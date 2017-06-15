@@ -34,7 +34,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="16"/>
                                 <state key="normal" title="GO"/>
                                 <connections>
-                                    <action selector="goButtoDidTouch:" destination="eau-mr-opY" eventType="touchUpInside" id="muQ-qB-Jpq"/>
+                                    <action selector="didClickGoBtn:" destination="eau-mr-opY" eventType="touchUpInside" id="iR4-RP-3xB"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkl-Ec-ajv">
