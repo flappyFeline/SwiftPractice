@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eau-mr-opY">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ia3-PE-i0Q">
+            <objects>
+                <viewController id="eau-mr-opY" customClass="ViewController" customModule="Project_14___EmojiSlotMachine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6GI-9l-A91"/>
+                        <viewControllerLayoutGuide type="bottom" id="kUb-MU-saO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zd1-1R-4PJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hyperspace" translatesAutoresizingMaskIntoConstraints="NO" id="e6Q-Q3-0NK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkx-fn-D3h">
+                                <rect key="frame" x="27" y="458" width="320" height="45"/>
+                                <color key="backgroundColor" red="0.6689732075" green="1" blue="0.034617960449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="zqZ-hs-HgK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="16"/>
+                                <state key="normal" title="GO"/>
+                                <connections>
+                                    <action selector="goButtoDidTouch:" destination="eau-mr-opY" eventType="touchUpInside" id="muQ-qB-Jpq"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkl-Ec-ajv">
+                                <rect key="frame" x="-3" y="201" width="383" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bingo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfR-0m-eKv">
+                                <rect key="frame" x="0.0" y="586" width="375" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="Vvc-UM-sdw"/>
+                                    <constraint firstAttribute="height" constant="28" id="kRr-tf-RBJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" red="0.99988853929999999" green="0.99998223779999995" blue="0.99983125930000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Vvc-UM-sdw"/>
+                                        <exclude reference="kRr-tf-RBJ"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lfR-0m-eKv" firstAttribute="top" secondItem="Nkx-fn-D3h" secondAttribute="bottom" constant="82" id="0Rg-tY-q6o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vkl-Ec-ajv" secondAttribute="trailing" constant="-17" id="3Dv-pT-RDA"/>
+                            <constraint firstAttribute="trailing" secondItem="lfR-0m-eKv" secondAttribute="trailing" id="3tt-Qs-OB8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vkl-Ec-ajv" secondAttribute="trailing" constant="-21" id="5eI-zK-YFN"/>
+                            <constraint firstItem="lfR-0m-eKv" firstAttribute="centerX" secondItem="Vkl-Ec-ajv" secondAttribute="centerX" constant="-1" id="7Po-SV-Zvh"/>
+                            <constraint firstItem="Nkx-fn-D3h" firstAttribute="leading" secondItem="Zd1-1R-4PJ" secondAttribute="leadingMargin" constant="11" id="7ih-8t-4AY"/>
+                            <constraint firstAttribute="trailing" secondItem="e6Q-Q3-0NK" secondAttribute="trailing" id="9s7-Ri-mWu"/>
+                            <constraint firstItem="Nkx-fn-D3h" firstAttribute="centerX" secondItem="e6Q-Q3-0NK" secondAttribute="centerX" id="CFb-G5-bgY"/>
+                            <constraint firstAttribute="bottom" secondItem="e6Q-Q3-0NK" secondAttribute="bottom" id="Dnr-W1-F7Z"/>
+                            <constraint firstItem="Nkx-fn-D3h" firstAttribute="top" secondItem="Vkl-Ec-ajv" secondAttribute="bottom" constant="41" id="G4i-Np-1Hx"/>
+                            <constraint firstItem="Vkl-Ec-ajv" firstAttribute="leading" secondItem="Zd1-1R-4PJ" secondAttribute="leadingMargin" constant="-15" id="Jkz-xD-jCp"/>
+                            <constraint firstItem="lfR-0m-eKv" firstAttribute="leading" secondItem="Zd1-1R-4PJ" secondAttribute="leading" id="Jzw-Pd-rFC"/>
+                            <constraint firstAttribute="bottom" secondItem="Nkx-fn-D3h" secondAttribute="bottom" constant="197" id="K7L-14-TOd"/>
+                            <constraint firstItem="lfR-0m-eKv" firstAttribute="centerX" secondItem="Zd1-1R-4PJ" secondAttribute="centerX" id="M2j-Rt-UML"/>
+                            <constraint firstItem="lfR-0m-eKv" firstAttribute="top" secondItem="Nkx-fn-D3h" secondAttribute="bottom" constant="83" id="P5k-8i-GT9"/>
+                            <constraint firstItem="Vkl-Ec-ajv" firstAttribute="leading" secondItem="Zd1-1R-4PJ" secondAttribute="leadingMargin" constant="-19" id="Pkb-uZ-Dz2"/>
+                            <constraint firstItem="e6Q-Q3-0NK" firstAttribute="centerX" secondItem="Zd1-1R-4PJ" secondAttribute="centerX" id="Q0H-WE-0B0"/>
+                            <constraint firstItem="kUb-MU-saO" firstAttribute="top" secondItem="lfR-0m-eKv" secondAttribute="bottom" constant="54" id="UpY-sF-fWM"/>
+                            <constraint firstItem="Vkl-Ec-ajv" firstAttribute="centerX" secondItem="lfR-0m-eKv" secondAttribute="centerX" id="Yga-ST-9Nj"/>
+                            <constraint firstItem="e6Q-Q3-0NK" firstAttribute="leading" secondItem="Zd1-1R-4PJ" secondAttribute="leading" id="fft-ax-bUm"/>
+                            <constraint firstItem="e6Q-Q3-0NK" firstAttribute="top" secondItem="Zd1-1R-4PJ" secondAttribute="top" id="gUm-G0-tuy"/>
+                            <constraint firstItem="e6Q-Q3-0NK" firstAttribute="centerY" secondItem="Zd1-1R-4PJ" secondAttribute="centerY" id="wek-Bz-eWY"/>
+                            <constraint firstItem="Vkl-Ec-ajv" firstAttribute="top" secondItem="6GI-9l-A91" secondAttribute="bottom" constant="181" id="xOb-Ud-ZZb"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3Dv-pT-RDA"/>
+                                <exclude reference="Yga-ST-9Nj"/>
+                                <exclude reference="Jkz-xD-jCp"/>
+                                <exclude reference="K7L-14-TOd"/>
+                                <exclude reference="0Rg-tY-q6o"/>
+                                <exclude reference="M2j-Rt-UML"/>
+                                <exclude reference="UpY-sF-fWM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="emojiPickerView" destination="Vkl-Ec-ajv" id="qhg-qL-SYg"/>
+                        <outlet property="goButton" destination="Nkx-fn-D3h" id="IgG-Ga-xaU"/>
+                        <outlet property="resultLabel" destination="lfR-0m-eKv" id="8ax-gi-Bdb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ESI-LV-zz0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105" y="146"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Hyperspace" width="621" height="1104"/>
+    </resources>
+</document>
