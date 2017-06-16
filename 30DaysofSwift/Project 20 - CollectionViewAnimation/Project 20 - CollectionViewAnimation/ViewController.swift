@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let AnimationCellIdentifier = "testcc";
+private let AnimationCellIdentifier = "AnimationCellIdentifier";
 
 class ViewController: UIViewController {
 
@@ -18,15 +18,20 @@ class ViewController: UIViewController {
         c.delegate = self;
         c.isPrefetchingEnabled = false;
         c.backgroundColor = .yellow;
-        c.register(UICollectionViewCell.self, forCellWithReuseIdentifier: AnimationCellIdentifier);
+        c.register(AnimationCollectionViewCell.self, forCellWithReuseIdentifier: AnimationCellIdentifier);
+        c.register(UINib(nibName: "AnimationCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: AnimationCellIdentifier);
         return c;
     }()
+    
+    var imageCollection: AnimationImaheCollection?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow;
         view.addSubview(self.collectionView);
         collectionView.frame = view.bounds;
+        
+        imageCollection = AnimationImaheCollection();
     }
     
     class YCHCollectionViewLayout: UICollectionViewFlowLayout {
@@ -46,18 +51,42 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10;
+        return imageCollection?.images.count ?? 0;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimationCellIdentifier, for: indexPath);
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimationCellIdentifier, for: indexPath) as? AnimationCollectionViewCell, let viewModel = imageCollection?.images.safeIndex(indexPath.row) else { return AnimationCollectionViewCell(); }
+        
+        cell.prepareCell(viewModel);
         cell.backgroundColor = .randomColor;
         return cell;
     }
     
     
     
+}
+
+struct AnimationImaheCollection {
+    fileprivate let imagePaths: [String] = {
+        var tempArray = [String]();
+        for i in 1...5 {
+            tempArray.append("\(i)");
+        }
+        return tempArray;
+    }();
+    
+    var images: [AnimationCellModel];
+    
+    init() {
+        images = imagePaths.map{ AnimationCellModel($0) };
+    }
+}
+
+extension Array {
+    func safeIndex(_ i: Int) -> Element? {
+        return i < self.count && i >= 0 ? self[i] : nil;
+    }
 }
 
 extension UIColor {
