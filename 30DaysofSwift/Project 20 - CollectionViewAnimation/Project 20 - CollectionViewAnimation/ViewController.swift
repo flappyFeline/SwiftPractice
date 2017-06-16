@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         c.delegate = self;
         c.isPrefetchingEnabled = false;
         c.backgroundColor = .yellow;
-        c.register(AnimationCollectionViewCell.self, forCellWithReuseIdentifier: AnimationCellIdentifier);
+//        c.register(AnimationCollectionViewCell.self, forCellWithReuseIdentifier: AnimationCellIdentifier);
         c.register(UINib(nibName: "AnimationCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: AnimationCellIdentifier);
         return c;
     }()
@@ -34,11 +34,69 @@ class ViewController: UIViewController {
         imageCollection = AnimationImaheCollection();
     }
     
+    func handleAnimationCellSelected(_ collectionView: UICollectionView, cell: AnimationCollectionViewCell) {
+        
+        if cell.cellIsSelected {
+            return;
+        }
+        
+        cell.handleCellSelected();
+        let preRect = cell.frame;
+        
+        cell.backButtonTapped = { [unowned self] in
+            
+            self.transitionCellWithAnimations({ 
+                cell.frame = preRect;
+                cell.resetElementStatus();
+            }, completion: { (_) in
+                self.collectionView.isScrollEnabled = true;
+                
+            });
+        }
+        
+        
+        
+        let animations: () -> () = {
+            cell.frame = collectionView.bounds;
+        }
+        
+        let completion: (_ finished: Bool) -> Void = { _ in
+            collectionView.isScrollEnabled = false;
+        }
+        
+        transitionCellWithAnimations(animations, completion: completion);
+    }
+    
+    func transitionCellWithAnimations(_ animations: @escaping () -> (), completion: @escaping (Bool) -> ()) {
+        UIView.animate(withDuration: Constants.AnimationDuration,
+                       delay: Constants.AnimationDelay,
+                       usingSpringWithDamping: Constants.AnimationSpringDamping,
+                       initialSpringVelocity: Constants.AnimationInitialSpringVelocity,
+                       options: [],
+                       animations: animations,
+                       completion: completion);
+    }
+    
+    func backButtonDidTouch() {
+        guard let indexPaths = self.collectionView.indexPathsForSelectedItems else { return }
+        
+        collectionView.isScrollEnabled = true;
+        collectionView.reloadItems(at: indexPaths);
+    }
+    
+    fileprivate struct Constants {
+        static let AnimationDuration: Double = 0.5
+        static let AnimationDelay: Double = 0.0
+        static let AnimationSpringDamping: CGFloat = 1.0
+        static let AnimationInitialSpringVelocity: CGFloat = 1.0
+    }
+
+
     class YCHCollectionViewLayout: UICollectionViewFlowLayout {
         override func prepare() {
             super.prepare();
             
-            minimumLineSpacing = 0;
+            minimumLineSpacing = 30;
             minimumInteritemSpacing = 0;
             scrollDirection = .vertical;
             itemSize = CGSize(width: collectionView!.bounds.size.width - 30, height: 210);
@@ -59,8 +117,14 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimationCellIdentifier, for: indexPath) as? AnimationCollectionViewCell, let viewModel = imageCollection?.images.safeIndex(indexPath.row) else { return AnimationCollectionViewCell(); }
         
         cell.prepareCell(viewModel);
-        cell.backgroundColor = .randomColor;
+//        cell.backgroundColor = .randomColor;/\
         return cell;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? AnimationCollectionViewCell else { return };
+        
+        self.handleAnimationCellSelected(collectionView, cell: cell);
     }
     
     

@@ -18,6 +18,10 @@ class AnimationCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var animationImageView: UIImageView!
     @IBOutlet weak var animationTextView: UITextView!
     
+    var cellIsSelected: Bool {
+        return !self.backButton.isHidden && !animationTextView.isScrollEnabled;
+    }
+    
     var backButtonTapped: (() -> Void)?;
     
     func prepareCell(_ viewModel: AnimationCellModel) {
@@ -26,14 +30,18 @@ class AnimationCollectionViewCell: UICollectionViewCell {
             return
         }
         animationImageView.image = img;
-        animationTextView.isScrollEnabled = false;
-        backButton.isHidden = true;
+        resetElementStatus();
     }
     
     func handleCellSelected() {
         animationTextView.isScrollEnabled = false;
         backButton.isHidden = false;
         self.superview?.bringSubview(toFront: self);
+    }
+    
+    func resetElementStatus() {
+        animationTextView.isScrollEnabled = false;
+        backButton.isHidden = true;
     }
     
     func backButtonDidTouch(_ sender: Any) {
