@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.5.0)
+  - FLKAutoLayout (0.2.1)
+  - FMMosaicLayout (0.1.4)
+  - ORStackView (3.0.1):
+    - FLKAutoLayout (~> 0.2)
+  - SwiftyJSON (2.4.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5.0)
+  - FMMosaicLayout
+  - ORStackView (~> 3.0)
+  - SwiftyJSON (~> 2.3)
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  FLKAutoLayout: 9db6b30c2008d230da608e62c607b11c23b942e6
+  FMMosaicLayout: c0febf6876c987c425d7e2176d034fa7a2c98cb5
+  ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
+  SwiftyJSON: 96918c1bf505efa50c4f72957018dd3452090c9c
+
+PODFILE CHECKSUM: 1010644069ea60b5dda44aee4400131d2d570e0e
+
+COCOAPODS: 1.2.1
